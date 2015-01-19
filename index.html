@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="eng-US">
+<head>
+		<script type="text/javascript" src="Questions.js"></script>
+	<script language="JavaScript">
+			var count=0;
+			function clicked(){
+				begin_Quiz();
+				load_Clickable();
+			}
+			function Submit_clicked(){
+				save_Answer();
+				clear_Backgrounds();
+				next_Ques();
+			}
+			function load_Clickable() {
+				document.getElementById('Answer_A').addEventListener("click", function() {
+					if (this.style.backgroundColor == "red") {
+						this.style.backgroundColor = '#85F27C';
+					} else {
+						clear_Backgrounds();
+						this.style.backgroundColor = 'red';
+					}
+					}, false);
+				document.getElementById('Answer_B').addEventListener("click", function() {
+					if (this.style.backgroundColor == "red") {
+						this.style.background = '#91B5F2';
+					} else {
+						clear_Backgrounds();
+						this.style.background = "red";
+					}
+				}, false);
+				document.getElementById('Answer_C').addEventListener("click", function() {
+					if (this.style.backgroundColor == "red") {
+						this.style.background = '#FCF8B3';
+					} else {
+						clear_Backgrounds();
+						this.style.background = "red";
+					}
+				}, false);
+			}
+			function clear_Backgrounds(){
+				if(document.getElementById('Answer_A').style.backgroundColor == "red"){
+					document.getElementById('Answer_A').style.backgroundColor = '#85F27C';
+				}
+				if(document.getElementById('Answer_B').style.backgroundColor == "red"){
+					document.getElementById('Answer_B').style.backgroundColor = '#91B5F2';
+				}
+				if(document.getElementById('Answer_C').style.backgroundColor == "red"){
+					document.getElementById('Answer_C').style.backgroundColor = '#FCF8B3';
+				}
+			}
+	</script>
+</head>
+<body>
+	<table id="mainTable" style="width:100%;" border="0">
+	<tbody>
+		<tr>
+		<!-- Start Quiz -->
+			<td id="Start">
+				<input type="button" value="Start Quiz" onclick="clicked();"/>
+			</td>
+		</tr>		
+		<tr>
+		<!-- Question Section -->
+			<td>
+				<h2>
+					<strong>Question</strong>
+				</h2>
+			</td>
+		</tr>
+		<tr>
+		<!-- Question Section -->
+			<td colspan="2" id="Question">
+			</td>
+		</tr>
+		<tr>	
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+		<!-- Answer A -->
+			<td id="Answer_A" style="background-color:#85F27C">
+			</td>
+		</tr>
+		<tr>
+		<!-- Answer B -->
+			<td id="Answer_B" style="background-color:#91B5F2">
+			</td>
+		</tr>
+		<tr>
+		<!-- Answer C -->
+			<td id="Answer_C" style="background-color:#FCF8B3">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;
+			</td>	
+		</tr>
+		<tr>
+		<!-- Submit Section -->
+			<td>
+				<input type="button" value="Submit Answer" onclick="Submit_clicked();"/>
+			</td>	
+		</tr>
+
+	</tbody>
+	</table>
+</body>
+</html>
+
+<!--
+		3. You are trying to figure out how to solve the issue from the call you just got off of
+
+a. Tickets or Projects
+
+b. Offline Work
+
+c. After Call Work
+
+4. Need to use the restroom after taking a call
+
+a. Tickets or Projects
+
+b. After Call Work
+
+c. Break
+
+5. You are awaiting calls
+
+a. Lunch
+
+b. Ready
+
+c. Offline Work
+
+6. New Release Training
+
+a. Meeting
+
+b. Training
+
+c. Lunch
+
+7. A colleague has received a call for you and you are currently free to take it
+
+a. Inbound or Transferred
+
+b. Offline Work
+
+c. After Call Work
+
+8. Time to go home for the day
+
+a. Logoff
+
+b. Offline Work
+
+c. Ready
+
+9. Have to write an answer to a client in a ticket in “needs reply”
+
+a. Offline Work
+
+b. Tickets or Projects
+
+c. After Call Work
+
+10. One on One with your Supervisor/Manager
+
+a. Meeting
+
+b. Training
+
+c. Tickets or Projects
+
+11. You are having trouble with an issue in a ticket and you need to find someone to assist you
+
+a. Offline Work
+
+b. After Call Work
+
+c. Tickets or Projects
+
+12. Need to call a client about a ticket you are working on
+
+a. Offline Work
+
+b. Outbound
+
+c. After Call Work
+
+13. Your scheduled time to eat
+
+a. Lunch
+
+b. Break
+
+c. Tickets or Projects
+
+14. Weekly Team Meeting
+
+a. Tickets or Projects
+
+b. Training
+
+c. Meeting
+
+15. A colleague has a question and needs some help on a ticket
+
+a. Tickets or Projects
+
+b. Training
+
+c. Offline Work
+
+16. A CRD has a client on the phone they would like to send over to you
+
+a. Offline Work
+
+b. Inbound or Transferred
+
+c. Tickets or Projects
+
+17. Need to submit an IT ticket about computer issues
+
+a. Offline Work
+
+b. Tickets or Projects
+
+c. After Call work
+
+18. Need to catch up with the tickets you accumulated throughout the day
+
+a. Tickets or Projects
+
+b. Offline Work
+
+c. After Call Work
+
+19. You are attending an SME Summit
+
+a. Tickets or Projects
+
+b. Offline Work
+
+c. Training
+
+20. Need to write a knowledge base article
+
+a. Offline Work
+
+b. After Call Work
+
+c. Tickets or Projects
+
+21. Must respond on a reopened ticket
+
+a. Offline Work
+
+b. After Call Work
+
+c. Tickets or Projects
+
+22. Helping a fellow teammate on the proper usage of the system
+
+a. Training
+
+b. Offline Work
+
+c. Tickets or Projects
+
+23. The other SME team has their meeting now and the amount of available SMEs in the queue is low
+
+a. Tickets or Projects
+
+b. Ready
+
+c. Meeting
+
+24. You are making configuration changes for the call that just ended
+
+a. Tickets or Projects
+
+b. After Call Work
+
+c. Meeting
+
+25. Need to call a colleague who is not in the office/house for some help on a ticket
+
+a. Tickets or Projects
+
+b. Outbound
+
+c. Meeting
+
+26. You just took 4 calls back to back and need a quick breather
+
+a. Tickets or Projects
+
+b. After Call Work
+
+c. Break
+
+27. Need to call West IP for issues with your phone
+
+a. Break
+
+b. After Call Work
+
+c. Offline Work
+
+28. You are making configuration changes for a call you took earlier in the day
+
+a. After Call Work
+
+b. Tickets or Projects
+
+c. Offline Work
+
+29. A CRD walks over with a Client who happens to be in the office but wanted to introduce you to them since you had worked on a project for them in the past.
+
+a. Tickets or Projects
+
+b. Break
+
+c. Offline work
+
+30. There is leftover Pizza in the Cafeteria however it is not your scheduled time to take lunch yet
+
+a. Lunch
+
+b. Break
+
+c. Tickets or Projects
+
+31. Having an issue with one of your assigned tickets for the day
+
+a. Meeting
+
+b. Training
+
+c. Tickets or Projects
+
+32. Need to call ADC for issues with your phone
+
+a. Offline Work
+
+b. Break
+
+c. Tickets or Projects
+
+33. Need to go talk to another department about a complex issue that could not be resolved within our department
+
+a. Tickets or Projects
+
+b. Offline Work
+
+c. After Call Work
+
+34. A Supervisor/Manager asks you to work on a client escalation
+
+a. Offline Work
+
+b. Tickets or Projects
+
+c. Outbound
+
+35. Need to reach out to a vendor about a ticket you are working on for a client
+
+a. Tickets or Projects
+
+b. Offline Work
+
+c. After Call Work
+
+36. You are working with clients in Fast Track
+
+a. Training
+
+b. Offline Work
+
+c. Tickets or Projects
+
+37. You are presenting a workshop for your peers during a Summit
+
+a. Meeting
+
+b. Training
+
+c. Offline Work
+
+38. You are up leading a class in one of our Advanced Admin for New Hires
+
+a. Offline Work
+
+b. Meeting
+
+c. Training
+
+39. The power goes out in the building and you are asked to finish your shift from home
+
+a. Offline Work
+
+b. Logout
+
+c. Tickets or Projects
+
+40. You are taking this Aux Status Game
+
+a. Offline Work
+
+b. Tickets or Projects
+
+c. Training
+		-->
