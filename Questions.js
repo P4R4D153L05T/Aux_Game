@@ -1,7 +1,7 @@
 //var Q1= Questions_DB.document.getElementsByTagName('td').innerHTML;//grab info from Questions_DB
 var count=0;
 var correct_answers=0;
-var Answer_arr = ['C','B','C','C','B','C','A','A','B','A','C','B','A','C','C','B','A','A','C'];
+var Answer_arr = ['C','B','C','C','B','C','A','A','B','A','C','B','A','C','C','B','A','A','C','A'];
 
 function begin_Quiz(){
 	correct_answers=0;
@@ -12,9 +12,12 @@ function begin_Quiz(){
 function next_Ques(){
 				var scope=count;
 				document.getElementById('Question').innerHTML = (scope+1) + ' ' + build_Questions(scope);
-				document.getElementById('Answer_A').innerHTML = build_Answers(scope,0);
-				document.getElementById('Answer_B').innerHTML = build_Answers(scope,1);
-				document.getElementById('Answer_C').innerHTML = build_Answers(scope,2);
+				if(scope < Answer_arr.length) {
+					document.getElementById('Answer_A').innerHTML = build_Answers(scope,0);
+					document.getElementById('Answer_B').innerHTML = build_Answers(scope,1);
+					document.getElementById('Answer_C').innerHTML = build_Answers(scope,2);
+				}
+
 				if(count == Answer_arr.length){
 					document.getElementById('Question').innerHTML = "Exam Complete";
 					document.getElementById('Answer_A').innerHTML = "";
@@ -82,13 +85,16 @@ function build_Answers(Question_number,Answer_Option){
 }
 
 function save_Answer(){
-	if (document.getElementById('Answer_A').style.backgroundColor == "red" && Answer_arr[count] == 'A') {
+	//count-1 because submitting answer updates count, thus pushes answer one ahead
+	//var out for debugging only
+	//var out = Answer_arr[count-1];
+	if (document.getElementById('Answer_A').style.backgroundColor == "red" && Answer_arr[count-1] == 'A') {
 		correct_answers++;
 	}
-	if(	document.getElementById('Answer_B').style.backgroundColor == "red" && Answer_arr[count]=='B'){
+	if(	document.getElementById('Answer_B').style.backgroundColor == "red" && Answer_arr[count-1]=='B'){
 		correct_answers++;
 	}
-	if(	document.getElementById('Answer_C').style.backgroundColor == "red" && Answer_arr[count]=='C'){
+	if(	document.getElementById('Answer_C').style.backgroundColor == "red" && Answer_arr[count-1]=='C'){
 		correct_answers++;
 	}
 }
